@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1012835943683",
+    "project_id": "na-vegano",
+    "storage_bucket": "na-vegano.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012835943683:android:85a798d8147d2d6d1ad536",
+        "android_client_info": {
+          "package_name": "com.unifenas.na_vegano"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012835943683-oort72cfki7pucs77l51lad361j24hoi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfqBbSKth-QrWnKzYbxUtTInl2u9T-UFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012835943683-oort72cfki7pucs77l51lad361j24hoi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

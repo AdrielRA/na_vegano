@@ -20,16 +20,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Na'Vegano",
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color(0x0075DF),
-        scaffoldBackgroundColor: Color(0xFFF5F1),
+        primaryColor: Color(0xFF0075DF),
+        scaffoldBackgroundColor: Color(0xFFFFF5F1),
         fontFamily: GoogleFonts.montserrat().fontFamily,
         textTheme: Theme.of(context).textTheme.apply(
-              bodyColor: Color(0x0075DF),
-              displayColor: Color(0x0075DF),
+              bodyColor: Color(0xFF0075DF),
+              displayColor: Color(0xFF0075DF),
               fontFamily: GoogleFonts.poppins().fontFamily,
             ),
-        iconTheme: IconThemeData(color: Color(0x0075DF)),
+        iconTheme: IconThemeData(color: Color(0xFF0075DF)),
       ),
       initialRoute: '/',
       routes: {
