@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +14,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Na'Vegano",
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Color(0x0075DF),
+        scaffoldBackgroundColor: Color(0xFFF5F1),
+        fontFamily: GoogleFonts.montserrat().fontFamily,
+        textTheme: Theme.of(context).textTheme.apply(
+              bodyColor: Color(0x0075DF),
+              displayColor: Color(0x0075DF),
+              fontFamily: GoogleFonts.poppins().fontFamily,
+            ),
+        iconTheme: IconThemeData(color: Color(0x0075DF)),
       ),
       home: null,
     );
