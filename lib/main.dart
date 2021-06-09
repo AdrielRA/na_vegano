@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:na_vegano/screens/cart_screen.dart';
+import 'package:na_vegano/screens/checkout_screen.dart';
+import 'package:na_vegano/screens/details_screen.dart';
+import 'package:na_vegano/screens/home_screen.dart';
+import 'package:na_vegano/screens/login_screen.dart';
+import 'package:na_vegano/screens/menu_screen.dart';
+import 'package:na_vegano/screens/register_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +31,16 @@ class MyApp extends StatelessWidget {
             ),
         iconTheme: IconThemeData(color: Color(0x0075DF)),
       ),
-      home: null,
+      initialRoute: '/',
+      routes: {
+        "/": (context) => HomeScreen(),
+        "/cart": (context) => CartScreen(),
+        "/checkout": (context) => CheckoutScreen(),
+        "/details": (context) => DetailsScreen(),
+        "/login": (context) => LoginScreen(),
+        "/menu": (context) => MenuScreen(),
+        "/register": (context) => RegisterScreen(),
+      },
     );
   }
 }
