@@ -21,14 +21,20 @@ class MyApp extends StatelessWidget {
       title: "Na'Vegano",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color(0xFF0075DF),
-        scaffoldBackgroundColor: Color(0xFFFFF5F1),
+        primaryColor: Color(0xFF23FA7D),
+        scaffoldBackgroundColor: Color(0xFF23FA7D),
         fontFamily: 'Poppins',
         textTheme: Theme.of(context).textTheme.apply(
-            bodyColor: Color(0xFF0075DF),
-            displayColor: Color(0xFF0075DF),
+            bodyColor: Color(0xFF222222),
+            displayColor: Color(0xFF222222),
             fontFamily: 'Poppins'),
-        iconTheme: IconThemeData(color: Color(0xFF0075DF)),
+        iconTheme: IconThemeData(color: Color(0xFF23FA7D)),
+        buttonTheme: ButtonThemeData(
+          buttonColor: Color(0xFFE8385E),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+        ),
       ),
       initialRoute: '/',
       routes: {
