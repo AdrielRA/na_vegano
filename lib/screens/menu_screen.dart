@@ -1,9 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:na_vegano/models/item_menu.dart';
+import 'package:na_vegano/services/firestore_service.dart';
 
-class MenuScreen extends StatelessWidget {
+class MenuScreen extends StatefulWidget {
   const MenuScreen({Key key}) : super(key: key);
 
-  cardItemMenu(context) {
+  @override
+  _MenuScreenState createState() => _MenuScreenState();
+}
+
+class _MenuScreenState extends State<MenuScreen> {
+  List<ItemMenu> items;
+
+  @override
+  void initState() {
+    FirestoreService().listenItems((itemsList) {
+      print(itemsList.length);
+      setState(() {
+        items = itemsList;
+      });
+    });
+    super.initState();
+  }
+
+  Widget cardItemMenu(context, ItemMenu item) {
     return GestureDetector(
       child: Column(
         children: [
@@ -13,7 +33,7 @@ class MenuScreen extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16.0),
               child: Image(
-                image: AssetImage('lib/assets/images/01.jpg'),
+                image: NetworkImage(item.photo),
                 fit: BoxFit.cover,
               ),
             ),
@@ -25,11 +45,11 @@ class MenuScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'R\$ 5.00',
+                  'R\$ ${item.price}',
                   style: TextStyle(color: Color.fromRGBO(0, 0, 0, 0.6)),
                 ),
                 Text(
-                  'Legume 1',
+                  item.name,
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                 )
               ],
@@ -38,7 +58,7 @@ class MenuScreen extends StatelessWidget {
         ],
       ),
       onTap: () {
-        Navigator.pushNamed(context, '/cart');
+        Navigator.pushNamed(context, '/details', arguments: item.id);
       },
     );
   }
@@ -86,22 +106,26 @@ class MenuScreen extends StatelessWidget {
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              transform: Matrix4.translationValues(0, -25, 0),
-              child: GridView.count(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                crossAxisCount: 2,
-                children: [
-                  cardItemMenu(context),
-                  cardItemMenu(context),
-                  cardItemMenu(context),
-                ],
-              ),
-            ),
-          ),
+          items == null
+              ? Center(
+                  child: CircularProgressIndicator(),
+                )
+              : Expanded(
+                  child: Container(
+                    transform: Matrix4.translationValues(0, -25, 0),
+                    child: GridView.count(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      crossAxisCount: 2,
+                      children: items
+                          .map(
+                            (item) => cardItemMenu(context, item),
+                          )
+                          .toList(),
+                    ),
+                  ),
+                ),
         ],
       ),
     ));
