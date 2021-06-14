@@ -14,6 +14,16 @@ class Button extends StatelessWidget {
       height: 50,
       width: MediaQuery.of(context).size.width,
       child: ElevatedButton(
+          style: ButtonStyle(
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+            ),
+            backgroundColor: MaterialStateProperty.all<Color>(
+              Theme.of(context).buttonColor,
+            ),
+          ),
           child: Center(
             child: !loading
                 ? Text(

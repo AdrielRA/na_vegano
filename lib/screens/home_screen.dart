@@ -15,8 +15,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               SizedBox(
                 width: MediaQuery.of(context).size.width,
-                child:
-                    Image(image: AssetImage('lib/assets/icons/logo-blue.png')),
+                child: Image(image: AssetImage('lib/assets/icons/logo.png')),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 40),

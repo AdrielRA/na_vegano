@@ -22,19 +22,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Color(0xFF23FA7D),
-        scaffoldBackgroundColor: Color(0xFF23FA7D),
+        scaffoldBackgroundColor: Color(0xFFF1F1F1),
         fontFamily: 'Poppins',
         textTheme: Theme.of(context).textTheme.apply(
             bodyColor: Color(0xFF222222),
             displayColor: Color(0xFF222222),
             fontFamily: 'Poppins'),
         iconTheme: IconThemeData(color: Color(0xFF23FA7D)),
-        buttonTheme: ButtonThemeData(
-          buttonColor: Color(0xFFE8385E),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
-          ),
-        ),
+        buttonColor: Color(0xFFE8385E),
       ),
       initialRoute: '/',
       routes: {
