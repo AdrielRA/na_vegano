@@ -35,10 +35,13 @@ class LoginScreen extends StatelessWidget {
                 Input(
                   text: 'Senha',
                 ),
-                Button(
-                  text: "ENTRAR",
-                  onPress: () => Navigator.pushNamed(context, '/register'),
-                ),
+                Container(
+                  margin: EdgeInsets.only(top: 8),
+                  child: Button(
+                    text: "ENTRAR",
+                    onPress: () => Navigator.pushNamed(context, '/menu'),
+                  ),
+                )
               ],
             ),
           ),
