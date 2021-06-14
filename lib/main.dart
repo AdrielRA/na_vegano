@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: "Na'Vegano",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color(0xFF23FA7D),
+        primaryColor: Color(0xFF0CD174),
         scaffoldBackgroundColor: Color(0xFFF1F1F1),
         fontFamily: 'Poppins',
         textTheme: Theme.of(context).textTheme.apply(
