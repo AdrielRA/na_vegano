@@ -25,9 +25,19 @@ class Input extends StatelessWidget {
             contentPadding: EdgeInsets.symmetric(vertical: 13, horizontal: 10),
             labelText: text,
             errorText: error,
-            border: OutlineInputBorder(),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(20),
+              ),
+            ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Theme.of(context).primaryColor),
+              borderRadius: BorderRadius.all(
+                Radius.circular(20),
+              ),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Theme.of(context).errorColor),
               borderRadius: BorderRadius.all(
                 Radius.circular(20),
               ),
@@ -41,6 +51,7 @@ class Input extends StatelessWidget {
             labelStyle: TextStyle(
               color: Theme.of(context).primaryColor,
             ),
+            errorStyle: TextStyle(color: Theme.of(context).buttonColor),
           ),
           obscureText: obscureText == null ? false : obscureText,
           keyboardType: keyboardType,

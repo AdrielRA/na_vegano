@@ -11,4 +11,18 @@ class UserModel {
       this.city,
       this.uf,
       this.password});
+
+  Map<String, dynamic> toMap() {
+    return {
+      'uid': uid,
+      'name': name,
+      'email': email,
+      'password': password,
+      'district': district,
+      'street': street,
+      'num': num,
+      'city': city,
+      'uf': uf,
+    };
+  }
 }
