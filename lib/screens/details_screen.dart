@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:na_vegano/models/item_cart.dart';
 import 'package:na_vegano/models/item_menu.dart';
 import 'package:na_vegano/services/firestore_service.dart';
 import 'package:na_vegano/widgets/button_widget.dart';
@@ -14,14 +15,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
   @override
   void initState() {
-    /*item = ItemMenu(
-        id: id,
-        fats: "50",
-        grams: 60,
-        name: "Salada top master",
-        photo: "",
-        price: 45.90,
-        proteins: "40");*/
     super.initState();
   }
 
@@ -146,7 +139,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             child: Button(
                               text: "Adicionar ao carrinho",
                               onPress: () {
-                                Navigator.pushNamed(context, '/cart');
+                                FirestoreService()
+                                    .setItemCart(
+                                      ItemCart(item: item, quantity: 1),
+                                    )
+                                    .then(
+                                      (_) =>
+                                          Navigator.pushNamed(context, '/cart'),
+                                    );
                               },
                             ),
                           ),
