@@ -106,7 +106,7 @@ class _CartScreenState extends State<CartScreen> {
             width: MediaQuery.of(context).size.width,
             height: 200,
             child: Image(
-              image: AssetImage('lib/assets/images/01.jpg'),
+              image: AssetImage('lib/assets/images/a.jpg'),
               fit: BoxFit.cover,
             ),
           ),
@@ -159,8 +159,16 @@ class _CartScreenState extends State<CartScreen> {
             transform: Matrix4.translationValues(0, -20, 0),
             padding: EdgeInsets.symmetric(horizontal: 8),
             child: Button(
-              text: "FINALIZAR COMPRA",
-              onPress: () => Navigator.pushNamed(context, '/menu'),
+              text: items != null && items.isNotEmpty
+                  ? "FINALIZAR COMPRA"
+                  : "VOLTAR",
+              onPress: () {
+                if (items != null && items.isNotEmpty)
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/checkout', (_) => false);
+                else
+                  Navigator.pop(context);
+              },
             ),
           )
         ],

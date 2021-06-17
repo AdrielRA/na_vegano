@@ -23,6 +23,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color(0xFF0CD174),
         errorColor: Color(0xFFE8385E),
+        accentColor: Color(0xFF0CD174),
+        accentColorBrightness: Brightness.light,
         scaffoldBackgroundColor: Color(0xFFF1F1F1),
         fontFamily: 'Poppins',
         textTheme: Theme.of(context).textTheme.apply(
